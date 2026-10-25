@@ -35,8 +35,8 @@ const projects: Project[] = [
   {
     num: "01",
     name: {
-      en: "GameZone Launcher",
-      id: "GameZone Launcher",
+      en: "GameZone",
+      id: "GameZone",
     },
     badge: {
       en: "v3.1.2 Production",
@@ -57,8 +57,8 @@ const projects: Project[] = [
       id: "Perangkat lunak desktop Windows modular untuk manajemen kebutuhan komunitas game PC, mencakup automasi penempatan aset Steam, diagnostik integritas sistem, dan sinkronisasi berkas simpanan lokal.",
     },
     details: {
-      en: "GameZone Launcher is an integrated Windows desktop application engineered to replace conventional GUI toolkits by utilizing Microsoft Edge WebView2 via PyWebView, providing a hardware-accelerated composite interface with zero UI thread blocking.\n\nKey Subsystems & Architecture:\n• Asynchronous IPC Bridge: Implements ~137 remote procedure call (RPC) methods in api.py adhering to parameter boundary validation and standardized JSON response serialization.\n• Steam Ingestion & Mirror Failover: Automates payload verification and extraction into the Steam stplug-in directory with graceful shutdown signaling (-shutdown) and hierarchical multi-server fallback.\n• NetFix Diagnostic Engine: Automates license cache invalidation (appinfo.vdf) and network connectivity repair without altering personal user settings.\n• Local & Cloud Save Isolation: Structured backup engine for game progress and SQLite 3 (WAL mode) local persistence, paired with Discord OAuth2 community verification.",
-      id: "GameZone Launcher merupakan perangkat lunak desktop Windows terintegrasi yang mengadopsi Microsoft Edge WebView2 melalui kerangka kerja PyWebView untuk menghadirkan antarmuka komposit berbasis akselerasi GPU tanpa pembekuan thread komputasi utama.\n\nSubsistem Inti & Arsitektur:\n• Jembatan Komunikasi IPC Asinkron: Mengimplementasikan sekitar 137 metode RPC pada kelas API utama dengan validasi batasan parameter dan struktur serialisasi data standar.\n• Pipeline Injeksi Steam & Mirror Failover: Mengotomasi verifikasi dan penempatan berkas ke direktori Steam stplug-in dengan penutupan aman proses steam.exe (-shutdown) serta failover multi-server terdistribusi.\n• Mesin Diagnostik NetFix: Menginvalidasi berkas lisensi appinfo.vdf untuk memulihkan anomali klien Steam tanpa merusak konfigurasi pengguna.\n• Manajemen Simpanan Data Lokal: Sistem pencadangan terstruktur untuk save game lokal, basis data SQLite 3 mode WAL, serta verifikasi keanggotaan komunitas via Discord OAuth2.",
+      en: "GameZone is an integrated Windows desktop application engineered to replace conventional GUI toolkits by utilizing Microsoft Edge WebView2 via PyWebView, providing a hardware-accelerated composite interface with zero UI thread blocking.\n\nKey Subsystems & Architecture:\n• Asynchronous IPC Bridge: Implements ~137 remote procedure call (RPC) methods in api.py adhering to parameter boundary validation and standardized JSON response serialization.\n• Steam Ingestion & Mirror Failover: Automates payload verification and extraction into the Steam stplug-in directory with graceful shutdown signaling (-shutdown) and hierarchical multi-server fallback.\n• NetFix Diagnostic Engine: Automates license cache invalidation (appinfo.vdf) and network connectivity repair without altering personal user settings.\n• Local & Cloud Save Isolation: Structured backup engine for game progress and SQLite 3 (WAL mode) local persistence, paired with Discord OAuth2 community verification.",
+      id: "GameZone merupakan perangkat lunak desktop Windows terintegrasi yang mengadopsi Microsoft Edge WebView2 melalui kerangka kerja PyWebView untuk menghadirkan antarmuka komposit berbasis akselerasi GPU tanpa pembekuan thread komputasi utama.\n\nSubsistem Inti & Arsitektur:\n• Jembatan Komunikasi IPC Asinkron: Mengimplementasikan sekitar 137 metode RPC pada kelas API utama dengan validasi batasan parameter dan struktur serialisasi data standar.\n• Pipeline Injeksi Steam & Mirror Failover: Mengotomasi verifikasi dan penempatan berkas ke direktori Steam stplug-in dengan penutupan aman proses steam.exe (-shutdown) serta failover multi-server terdistribusi.\n• Mesin Diagnostik NetFix: Menginvalidasi berkas lisensi appinfo.vdf untuk memulihkan anomali klien Steam tanpa merusak konfigurasi pengguna.\n• Manajemen Simpanan Data Lokal: Sistem pencadangan terstruktur untuk save game lokal, basis data SQLite 3 mode WAL, serta verifikasi keanggotaan komunitas via Discord OAuth2.",
     },
     github: "https://github.com/mhmdaryaqadi/GameZone-Releases",
     highlights: ["python", "git", "linux"],
@@ -190,8 +190,8 @@ const experiences: Array<{
     },
     bullets: [
       {
-        en: "Engineered GameZone Launcher, a hybrid Windows desktop management utility leveraging Python 3.12, Edge WebView2, and ~137 custom RPC functions.",
-        id: "Mengembangkan GameZone Launcher, aplikasi desktop hybrid Windows berbasis Python 3.12, Edge WebView2, dan sekitar 137 fungsi RPC mandiri.",
+        en: "Engineered GameZone, a hybrid Windows desktop management utility leveraging Python 3.12, Edge WebView2, and ~137 custom RPC functions.",
+        id: "Mengembangkan GameZone, aplikasi desktop hybrid Windows berbasis Python 3.12, Edge WebView2, dan sekitar 137 fungsi RPC mandiri.",
       },
       {
         en: "Built full-stack transactional web applications with Laravel 11/12, modern relational schemas, and interactive WebGL experiences with Three.js.",
