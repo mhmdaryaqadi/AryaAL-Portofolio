@@ -324,7 +324,7 @@ export default function Home() {
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100 whitespace-nowrap"
             >
-              Arya Alqadi
+              Arya AL
             </span>
             <span className="hidden md:inline-flex">
               <span className="status-pill">{t("header.availability")}</span>
