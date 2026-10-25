@@ -1,167 +1,167 @@
 // Minimal i18n layer: a single dictionary keyed by dot-path, with each leaf
-// carrying both ID and EN copy. Consumers read via `useLanguage().t()`
+// carrying both EN and ID copy. Consumers read via `useLanguage().t()`
 // which resolves the path for the active language.
-export type Lang = "id" | "en";
+export type Lang = "en" | "id";
 
-export const LANGUAGES: Lang[] = ["id", "en"];
-export const DEFAULT_LANG: Lang = "id";
+export const LANGUAGES: Lang[] = ["en", "id"];
+export const DEFAULT_LANG: Lang = "en";
 
 type Leaf = Record<Lang, string>;
 type Node = Leaf | { [key: string]: Node };
 
 function isLeaf(node: Node): node is Leaf {
-  return typeof (node as Leaf).id === "string";
+  return typeof (node as Leaf).en === "string";
 }
 
 export const DICT = {
   picker: {
-    season: { id: "Tema Musim", en: "Season Theme" },
-    language: { id: "Bahasa", en: "Language" },
+    season: { en: "Theme", id: "Tema Musim" },
+    language: { en: "Language", id: "Bahasa" },
   },
   seasons: {
-    spring: { id: "Semi", en: "Spring" },
-    summer: { id: "Panas", en: "Summer" },
-    autumn: { id: "Gugur", en: "Autumn" },
-    winter: { id: "Dingin", en: "Winter" },
+    spring: { en: "Spring", id: "Semi" },
+    summer: { en: "Summer", id: "Panas" },
+    autumn: { en: "Autumn", id: "Gugur" },
+    winter: { en: "Winter", id: "Dingin" },
   },
   nav: {
-    aria: { id: "Bagian Halaman", en: "Sections" },
-    home: { id: "Beranda", en: "Home" },
-    stack: { id: "Tech Stack", en: "Stack" },
-    experience: { id: "Pengalaman", en: "Experience" },
-    project: { id: "Proyek", en: "Project" },
-    contact: { id: "Kontak", en: "Contact" },
+    aria: { en: "Navigation Sections", id: "Navigasi Halaman" },
+    home: { en: "Home", id: "Beranda" },
+    stack: { en: "Stack", id: "Tech Stack" },
+    experience: { en: "Experience", id: "Pengalaman" },
+    project: { en: "Project", id: "Proyek" },
+    contact: { en: "Contact", id: "Kontak" },
   },
   header: {
     availability: {
+      en: "Available for opportunities",
       id: "Terbuka untuk Peluang Kerja",
-      en: "Open to opportunities",
     },
   },
   hero: {
-    greeting: { id: "Halo, saya", en: "Hi, I am" },
+    greeting: { en: "Hello, I am", id: "Halo, saya" },
     roleLine: {
-      id: "Full Stack & Software Engineer.",
       en: "Full Stack & Software Engineer.",
+      id: "Full Stack & Software Engineer.",
     },
     tagline: {
-      id: "Spesialis aplikasi web modern, desktop software berkinerja tinggi, dan infrastruktur sistem.",
-      en: "Specialized in modern web platforms, high-performance desktop apps, and system infrastructure.",
+      en: "Focused on full-stack web platforms, desktop software engineering, and system infrastructure.",
+      id: "Fokus pada rekayasa platform web full-stack, pengembangan perangkat lunak desktop, dan infrastruktur sistem.",
     },
-    cv: { id: "Unduh CV", en: "Download CV" },
-    hire: { id: "Hubungi Saya", en: "Contact me" },
-    scroll: { id: "Scroll untuk eksplorasi", en: "Scroll to explore" },
+    cv: { en: "Download CV", id: "Unduh CV" },
+    hire: { en: "Get in Touch", id: "Hubungi Saya" },
+    scroll: { en: "Scroll to explore", id: "Gulir untuk eksplorasi" },
     keysHint: {
+      en: "· hover over keycaps to inspect",
       id: "· arahkan kursor ke tombol keyboard",
-      en: "· hover over the keys",
     },
   },
   stack: {
-    title: { id: "Tech Stack", en: "Tech Stack" },
+    title: { en: "Tech Stack", id: "Tech Stack" },
     hint: {
+      en: "(hint: hover over a keycap to inspect)",
       id: "(petunjuk: arahkan kursor ke tombol keyboard)",
-      en: "(hint: hover over a key)",
     },
     hintMobile: {
-      id: "Teknologi dan perangkat yang saya gunakan untuk membangun solusi.",
-      en: "The tools and technologies I build with.",
+      en: "Core technologies and engineering tools.",
+      id: "Perangkat dan teknologi rekayasa utama.",
     },
   },
   experience: {
-    title: { id: "Pengalaman & Edukasi", en: "Experience & Education" },
+    title: { en: "Experience & Education", id: "Pengalaman & Edukasi" },
     subtitle: {
-      id: "Rekam jejak profesional, kejuruan, dan latar belakang akademis saya.",
-      en: "My professional journey, vocational foundation, and academic background.",
+      en: "Academic background and practical technical experience.",
+      id: "Latar belakang akademis dan pengalaman teknis terapan.",
     },
   },
   projects: {
-    kicker: { id: "proyek unggulan", en: "featured project" },
-    viewMore: { id: "Lihat Detail", en: "View details" },
-    openSite: { id: "Kunjungi Aplikasi", en: "Visit site" },
-    viewCode: { id: "Lihat Kode di GitHub", en: "View code" },
-    close: { id: "Tutup", en: "Close" },
-    stackLabel: { id: "Teknologi", en: "Stack" },
-    overview: { id: "Ikhtisar Proyek", en: "Overview" },
+    kicker: { en: "featured project", id: "proyek pilihan" },
+    viewMore: { en: "View Details", id: "Lihat Rincian" },
+    openSite: { en: "Visit Site", id: "Kunjungi Situs" },
+    viewCode: { en: "View Source Code", id: "Lihat Kode Sumber" },
+    close: { en: "Close", id: "Tutup" },
+    stackLabel: { en: "Tech Stack", id: "Tumpukan Teknologi" },
+    overview: { en: "Project Overview", id: "Ikhtisar Proyek" },
   },
   contact: {
-    kicker: { id: "kontak", en: "contact" },
-    title: { id: "Mari Berkolaborasi?", en: "Let's talk?" },
+    kicker: { en: "contact", id: "kontak" },
+    title: { en: "Get In Touch", id: "Hubungi Saya" },
     body: {
-      id: "Punya ide proyek, kebutuhan sistem bisnis, atau ingin berdiskusi seputar rekayasa perangkat lunak? Keyboard ini siap menyambut pesan Anda.",
-      en: "Have a project in mind, business system needs, or want to discuss software engineering? The keyboard is ready for your first message.",
+      en: "Open to technical discussions, software engineering collaborations, and career opportunities. Feel free to reach out via email or direct messaging.",
+      id: "Terbuka untuk diskusi teknis, kolaborasi rekayasa perangkat lunak, maupun peluang profesional. Silakan hubungi melalui email atau pesan langsung.",
     },
-    copyEmail: { id: "Salin Email", en: "Copy email" },
-    openMail: { id: "Kirim Email", en: "Send email" },
-    github: { id: "GitHub", en: "GitHub" },
-    linkedin: { id: "LinkedIn", en: "LinkedIn" },
-    whatsapp: { id: "WhatsApp", en: "WhatsApp" },
-    emailToast: { id: "Email berhasil disalin!", en: "Email copied!" },
+    copyEmail: { en: "Copy Email", id: "Salin Email" },
+    openMail: { en: "Send Email", id: "Kirim Email" },
+    github: { en: "GitHub", id: "GitHub" },
+    linkedin: { en: "LinkedIn", id: "LinkedIn" },
+    whatsapp: { en: "WhatsApp", id: "WhatsApp" },
+    emailToast: { en: "Email copied to clipboard", id: "Email berhasil disalin" },
     footer: {
-      id: "© 2026 Muhammad Arya Alqadi. Hak cipta dilindungi.",
       en: "© 2026 Muhammad Arya Alqadi. All rights reserved.",
+      id: "© 2026 Muhammad Arya Alqadi. Hak cipta dilindungi.",
     },
   },
   keyboard: {
     taglines: {
       typescript: {
-        id: "JavaScript bertipe ketat untuk skalabilitas dan keandalan kode.",
-        en: "Typed JavaScript for scalable, robust codebases.",
+        en: "Statically typed JavaScript superset for structured software architectures.",
+        id: "Superset JavaScript dengan sistem pengetikan statis untuk arsitektur perangkat lunak terstruktur.",
       },
       javascript: {
-        id: "Mesin penggerak web dinamis dari browser hingga server runtime.",
-        en: "The dynamic engine of the modern web ecosystem.",
+        en: "ECMAScript language standard for clientside logic and runtime execution.",
+        id: "Standar bahasa ECMAScript untuk logika sisi klien dan eksekusi runtime.",
       },
       react: {
-        id: "Arsitektur komponen deklaratif untuk antarmuka yang reaktif.",
-        en: "Component-driven architecture for interactive UIs.",
+        en: "Declarative UI component library with virtual DOM state management.",
+        id: "Pustaka antarmuka deklaratif dengan manajemen status dan siklus hidup komponen.",
       },
       nextdotjs: {
-        id: "Framework fullstack React: Server Components, App Router & SSR.",
-        en: "React all grown up: routing, SSR, edge & high performance.",
+        en: "Full-stack React framework supporting Server Components, App Router, and SSR.",
+        id: "Kerangka kerja full-stack React berbasis Server Components, App Router, dan SSR.",
       },
       tailwindcss: {
-        id: "Utility-first CSS untuk styling antarmuka modern, cepat, dan presisi.",
-        en: "Utility-first styling for pixel-perfect design systems.",
+        en: "Utility-first CSS framework for systematic and responsive interface styling.",
+        id: "Kerangka kerja CSS utility-first untuk perancangan antarmuka sistematis dan responsif.",
       },
       python: {
-        id: "Sintaks bersih, tangguh untuk desktop GUI, automasi, dan backend.",
-        en: "Clean syntax, powerful for desktop GUI, automation, and backend.",
+        en: "High-level programming language utilized for desktop GUI, IPC bridges, and automation.",
+        id: "Bahasa pemrograman tingkat tinggi untuk desktop GUI, jembatan IPC, dan otomasi sistem.",
       },
       php: {
-        id: "Fondasi backend web yang stabil dan teruji di industri global.",
-        en: "Reliable server-side powerhouse driving modern web applications.",
+        en: "Server-side scripting language for backend web engineering and data processing.",
+        id: "Bahasa skrip sisi server untuk rekayasa backend web dan pengolahan data.",
       },
       laravel: {
-        id: "Framework PHP elegan: Eloquent ORM, REST API, dan sistem POS terstruktur.",
-        en: "Elegant PHP framework for MVC architecture and scalable platforms.",
+        en: "PHP framework employing MVC architecture, Eloquent ORM, and dependency injection.",
+        id: "Kerangka kerja PHP dengan arsitektur MVC, Eloquent ORM, dan dependency injection.",
       },
       nodedotjs: {
-        id: "Runtime JavaScript asynchronous berkecepatan tinggi di sisi server.",
-        en: "High-throughput asynchronous JavaScript server runtime.",
+        en: "Event-driven asynchronous JavaScript runtime environment for backend services.",
+        id: "Lingkungan eksekusi JavaScript asinkron berbasis event untuk layanan backend.",
       },
       threedotjs: {
-        id: "Grafika WebGL dan pengalaman 3D interaktif di browser web.",
-        en: "Interactive 3D graphics and WebGL in the browser via Three.js & R3F.",
+        en: "WebGL and WebGPU 3D graphics rendering library for interactive browser scenes.",
+        id: "Pustaka rendering grafika 3D WebGL dan WebGPU untuk adegan interaktif pada peramban.",
       },
       mysql: {
-        id: "Relational database andalan untuk integritas data transaksi dan bisnis.",
-        en: "Battle-tested relational database for data integrity and fast queries.",
+        en: "Relational database management system for ACID-compliant transactional data.",
+        id: "Sistem manajemen basis data relasional untuk integritas data transaksional berstandar ACID.",
       },
       postgresql: {
-        id: "Database open-source tingkat lanjut dengan keandalan enterprise.",
-        en: "Advanced open-source relational database built for high reliability.",
+        en: "Open-source object-relational database system emphasizing standards compliance.",
+        id: "Sistem basis data objek-relasional dengan kepatuhan tinggi terhadap standar SQL.",
       },
       docker: {
-        id: "Kontainerisasi agar aplikasi berjalan identik di lokal maupun server.",
-        en: "Same on my machine, same in production with containers.",
+        en: "OS-level virtualization platform for containerized application environments.",
+        id: "Platform virtualisasi tingkat sistem operasi untuk lingkungan aplikasi berbasis kontainer.",
       },
       git: {
-        id: "Mesin waktu dan sistem kontrol versi untuk riwayat kode terdistribusi.",
-        en: "History and a time machine for distributed code collaboration.",
+        en: "Distributed version control system for tracking source code change history.",
+        id: "Sistem kontrol versi terdistribusi untuk pelacakan riwayat perubahan kode sumber.",
       },
       linux: {
-        id: "Sistem operasi andalan untuk manajemen server, CLI, dan deployment.",
-        en: "The rock-solid foundation for server management and cloud hosting.",
+        en: "Unix-like operating system foundation for server environments and CLI workflows.",
+        id: "Sistem operasi berbasis Unix untuk lingkungan server dan alur kerja antarmuka baris perintah.",
       },
     },
   },
@@ -176,6 +176,6 @@ export function translate(path: string, lang: Lang): string {
     ref = (ref as { [key: string]: Node })[p];
     if (ref === undefined) return path;
   }
-  if (isLeaf(ref)) return ref[lang] ?? ref.id ?? path;
+  if (isLeaf(ref)) return ref[lang] ?? ref.en ?? path;
   return path;
 }

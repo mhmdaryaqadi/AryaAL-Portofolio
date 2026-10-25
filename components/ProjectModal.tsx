@@ -33,7 +33,7 @@ type Props = {
 };
 
 function pick<T>(loc: { id: T; en: T }, lang: Lang): T {
-  return loc[lang] ?? loc.id;
+  return loc[lang] ?? loc.en;
 }
 
 // Fullscreen modal that details a project. Closes on ESC, click outside,

@@ -35,26 +35,30 @@ const projects: Project[] = [
   {
     num: "01",
     name: {
-      id: "GameZone — Windows Gaming Hub & RPC Engine",
-      en: "GameZone — Windows Gaming Hub & RPC Engine",
+      en: "GameZone Launcher",
+      id: "GameZone Launcher",
+    },
+    badge: {
+      en: "v3.1.2 Production",
+      id: "v3.1.2 Rilis Stabil",
     },
     stack: [
       "Python 3.12",
-      "Edge WebView2",
+      "Microsoft Edge WebView2",
       "PyWebView",
-      "SQLite 3",
+      "SQLite 3 (WAL)",
       "Discord OAuth2",
       "Firebase RTDB",
       "Inno Setup",
       "PyInstaller",
     ],
     desc: {
-      id: "Aplikasi desktop Windows all-in-one untuk komunitas gamer: otomatisasi library Steam, 1-Click NetFix, backup save game, dan integrasi Discord.",
-      en: "All-in-one Windows desktop application for gamers: automated Steam library management, 1-Click NetFix, save data backups, and Discord integration.",
+      en: "A modular Windows desktop management software for PC gaming communities, featuring automated Steam asset deployment, system diagnostics, and encrypted local save synchronization.",
+      id: "Perangkat lunak desktop Windows modular untuk manajemen kebutuhan komunitas game PC, mencakup automasi penempatan aset Steam, diagnostik integritas sistem, dan sinkronisasi berkas simpanan lokal.",
     },
     details: {
-      id: "Aplikasi desktop Windows all-in-one yang dibangun dengan arsitektur hybrid Python 3.12 dan Microsoft Edge WebView2. GameZone memiliki 137 fungsi RPC mandiri dengan latensi eksekusi sangat cepat (< 0.5 ms) dan render 60 FPS GPU.\n\nDilengkapi fitur 1-Click NetFix untuk perbaikan cache Steam yang korup, cadangan multi-server stplug-in otomatis, integrasi Discord OAuth2 & Firebase Realtime Database untuk pantau teman mabar, serta paket instalasi mandiri yang dibuat dengan Inno Setup dan PyInstaller.",
-      en: "An all-in-one Windows desktop application built with a hybrid Python 3.12 and Microsoft Edge WebView2 architecture. GameZone features 137 custom RPC functions delivering sub-0.5ms response times and GPU-accelerated 60 FPS rendering.\n\nIncludes 1-Click NetFix for Steam cache repair, automated multi-server stplug-in fallback, Discord OAuth2 and Firebase RTDB for real-time presence tracking, and standalone distribution via Inno Setup and PyInstaller.",
+      en: "GameZone Launcher is an integrated Windows desktop application engineered to replace conventional GUI toolkits by utilizing Microsoft Edge WebView2 via PyWebView, providing a hardware-accelerated composite interface with zero UI thread blocking.\n\nKey Subsystems & Architecture:\n• Asynchronous IPC Bridge: Implements ~137 remote procedure call (RPC) methods in api.py adhering to parameter boundary validation and standardized JSON response serialization.\n• Steam Ingestion & Mirror Failover: Automates payload verification and extraction into the Steam stplug-in directory with graceful shutdown signaling (-shutdown) and hierarchical multi-server fallback.\n• NetFix Diagnostic Engine: Automates license cache invalidation (appinfo.vdf) and network connectivity repair without altering personal user settings.\n• Local & Cloud Save Isolation: Structured backup engine for game progress and SQLite 3 (WAL mode) local persistence, paired with Discord OAuth2 community verification.",
+      id: "GameZone Launcher merupakan perangkat lunak desktop Windows terintegrasi yang mengadopsi Microsoft Edge WebView2 melalui kerangka kerja PyWebView untuk menghadirkan antarmuka komposit berbasis akselerasi GPU tanpa pembekuan thread komputasi utama.\n\nSubsistem Inti & Arsitektur:\n• Jembatan Komunikasi IPC Asinkron: Mengimplementasikan sekitar 137 metode RPC pada kelas API utama dengan validasi batasan parameter dan struktur serialisasi data standar.\n• Pipeline Injeksi Steam & Mirror Failover: Mengotomasi verifikasi dan penempatan berkas ke direktori Steam stplug-in dengan penutupan aman proses steam.exe (-shutdown) serta failover multi-server terdistribusi.\n• Mesin Diagnostik NetFix: Menginvalidasi berkas lisensi appinfo.vdf untuk memulihkan anomali klien Steam tanpa merusak konfigurasi pengguna.\n• Manajemen Simpanan Data Lokal: Sistem pencadangan terstruktur untuk save game lokal, basis data SQLite 3 mode WAL, serta verifikasi keanggotaan komunitas via Discord OAuth2.",
     },
     github: "https://github.com/mhmdaryaqadi/GameZone-Releases",
     media: [
@@ -70,85 +74,94 @@ const projects: Project[] = [
   {
     num: "02",
     name: {
-      id: "Warkop Digital — POS & Online Ordering Platform",
-      en: "Warkop Digital — POS & Online Ordering Platform",
+      en: "Warkop Digital — POS & Order System",
+      id: "Warkop Digital — Sistem Kasir & Pemesanan",
+    },
+    badge: {
+      en: "Web Application",
+      id: "Aplikasi Web",
     },
     stack: [
       "Laravel 11",
       "PHP 8.2",
-      "Tailwind CSS",
       "MySQL",
+      "Tailwind CSS",
       "Blade",
       "Vite",
-      "Thermal Print",
     ],
     desc: {
-      id: "Sistem kasir (POS) modern dan katalog pemesanan online kafe/warkop dengan manajemen meja, struk thermal, dan laporan analitik penjualan.",
-      en: "Modern Point of Sale (POS) and online ordering platform for cafes with table management, thermal receipt printing, and sales analytics.",
+      en: "A web-based Point of Sale (POS) and digital ordering platform designed for food and beverage outlets, managing menu catalogs, cart sessions, and transaction workflows.",
+      id: "Aplikasi berbasis web untuk operasional kasir (Point of Sale) dan pemesanan digital pada unit usaha kafe/warkop, mencakup pengelolaan katalog menu, sesi keranjang, dan transaksi.",
     },
     details: {
-      id: "Platform kasir dan katalog pemesanan responsif berbasis web untuk bisnis kafe/warkop. Dibangun menggunakan Laravel 11 dengan pemisahan service layer untuk penanganan transaksi kasir, katalog menu interaktif untuk pelanggan smartphone via QR code, manajemen status meja real-time, pencetakan struk kasir thermal, dan rekapitulasi omzet harian dengan basis data MySQL.",
-      en: "A responsive web-based POS and ordering catalog for food & beverage businesses. Built with Laravel 11 featuring clean service-layer architecture for transactions, mobile QR ordering for dine-in guests, real-time table status tracking, thermal receipt printing, and daily revenue reporting on MySQL.",
+      en: "Warkop Digital is an operational platform built with Laravel 11 following Model-View-Controller (MVC) architectural standards to streamline ordering workflows in food and beverage micro-businesses.\n\nKey Subsystems & Architecture:\n• Customer Ordering Workflow: Digital menu catalog allowing dine-in visitors to select items, adjust quantities, and manage session-based carts with real-time subtotal calculations.\n• Administrative Management Dashboard: Protected administrative area for complete CRUD operations over catalog items, category classifications, and pricing updates.\n• Data Architecture & Integrity: Relational data modeling in MySQL managed via Laravel database migrations, input sanitization, and CSRF protection.\n• Responsive Interface: Mobile-first interface designed with Tailwind CSS and Vite asset pipeline for customer and staff devices.",
+      id: "Warkop Digital adalah platform operasional berbasis web yang dibangun menggunakan Laravel 11 dengan standar arsitektur Model-View-Controller (MVC) untuk menyederhanakan alur transaksi pada unit usaha kafe/warkop.\n\nSubsistem Inti & Arsitektur:\n• Alur Pemesanan Pelanggan: Katalog menu digital yang memungkinkan pelanggan memilih makanan/minuman, menyesuaikan kuantitas pesanan, serta mengelola sesi keranjang belanja dengan kalkulasi total harga.\n• Panel Manajemen Administratif: Rute khusus terproteksi sesi untuk operasi CRUD (Create, Read, Update, Delete) data menu, klasifikasi kategori, dan pembaruan harga.\n• Arsitektur Basis Data: Pemodelan data relasional pada MySQL yang dikelola melalui migrasi skema Laravel, sanitasi input, dan proteksi token CSRF.\n• Desain Responsif: Antarmuka berbasis Tailwind CSS dan bundler Vite yang dioptimalkan untuk perangkat mobile staf dan pengunjung.",
     },
     github: "https://github.com/mhmdaryaqadi/warkop-digital",
     highlights: ["laravel", "php", "tailwindcss", "mysql"],
-    badge: { id: "Production Ready", en: "Production Ready" },
     align: "right",
     section: "project2",
   },
   {
     num: "03",
     name: {
-      id: "Portofolio 3D — Island & Vehicle Simulation",
-      en: "Portofolio 3D — Island & Vehicle Simulation",
+      en: "Portal Guru — Academic Management System",
+      id: "Portal Guru — Sistem Informasi Akademik",
     },
-    stack: [
-      "Three.js",
-      "WebGL",
-      "Cannon.js",
-      "JavaScript",
-      "GLSL Shaders",
-      "Vite",
-    ],
-    desc: {
-      id: "Eksplorasi portofolio 3D interaktif di mana pengunjung mengendarai mobil di pulau 3D miniatur dengan simulasi fisika realistis dan audio dinamis.",
-      en: "An interactive 3D web portfolio where visitors drive a physics-enabled car across a stylized island world with spatial audio and minigames.",
-    },
-    details: {
-      id: "Dunia pulau 3D imersif yang dibangun di atas WebGL dan Three.js dengan simulasi fisika raycast vehicle Cannon.js, audio spasial, siklus siang-malam, dan area interaktif seperti bowling, arena hancur, dan mesin waktu.\n\nMenampilkan teks 3D fisik ARYA ALQADI yang bisa ditabrak dan berinteraksi secara kinetik dengan mobil pemain di area pendaratan.",
-      en: "An immersive 3D island world powered by WebGL, Three.js, and Cannon.js raycast physics simulation. Features custom spatial audio, interactive minigames (bowling, physics ramps, time machine), and physical extruded 3D lettering 'ARYA ALQADI' that dynamically reacts to vehicle collisions.",
-    },
-    url: "http://localhost:3001",
-    github: "https://github.com/mhmdaryaqadi/Portofolio-3D",
-    highlights: ["threedotjs", "javascript", "git"],
-    align: "left",
-    section: "project3",
-  },
-  {
-    num: "04",
-    name: {
-      id: "Portal Guru — School Academic Management",
-      en: "Portal Guru — School Academic Management",
+    badge: {
+      en: "Verified System",
+      id: "Sistem Terverifikasi",
     },
     stack: [
       "Laravel 11",
-      "PHP",
+      "PHP 8.2",
       "MySQL",
       "Tailwind CSS",
       "RBAC Security",
       "Blade",
     ],
     desc: {
-      id: "Sistem informasi akademik sekolah untuk penilaian siswa, rekapitulasi rapor, dan jurnal mengajar guru dengan kontrol hak akses (RBAC) ketat.",
-      en: "School academic management platform for student grading, report card generation, and teacher lesson journals with strict RBAC.",
+      en: "An integrated educational administration system featuring geofenced instructor attendance, digital classroom journals, student academic evaluations, and role-based access control.",
+      id: "Sistem administrasi pendidikan terpadu mencakup presensi guru berbasis geofencing GPS, jurnal pembelajaran digital (KBM), evaluasi akademik siswa, dan kontrol hak akses multi-peran.",
     },
     details: {
-      id: "Aplikasi web manajemen akademik komprehensif yang dirancang untuk efisiensi administrasi sekolah. Menerapkan kontrol akses berbasis peran (RBAC) berlapis: Administrator, Wali Kelas, dan Guru Mata Pelajaran.\n\nDilengkapi modul jurnal kegiatan mengajar harian, pengelolaan absensi, input nilai formatif/sumatif, dan generasi otomatis rapor siswa siap cetak.",
-      en: "Comprehensive academic management web app designed for educational administration. Implements multi-tier Role-Based Access Control (Admin, Homeroom Teacher, Subject Teacher).\n\nFeatures daily teacher journal logging, attendance management, formative/summative grading, and automated student report card export.",
+      en: "Portal Guru is a centralized academic management system developed to digitize daily instructional governance for formal schools and educational institutions.\n\nKey Subsystems & Architecture:\n• Geofenced Attendance Validation: Verifies teacher attendance by calculating real-time GPS coordinate proximity against the institution's designated geofence radius.\n• Instructional Journaling & Class Roll Call: Enables educators to log daily teaching materials, competency achievements, and record student attendance directly within each scheduled class period.\n• Student Development Tracking: Maintains holistic academic records, formative assessments, student disciplinary logs, and portfolio archives.\n• Multi-Tier Role-Based Access Control (RBAC): Differentiates authorization boundaries between System Administrators and Instructional Staff with dual-credential authentication.",
+      id: "Portal Guru merupakan platform tata kelola akademik terpusat yang dirancang untuk mendigitalkan administrasi operasional pengajar pada institusi pendidikan.\n\nSubsistem Inti & Arsitektur:\n• Presensi Berbasis Geofencing: Validasi kehadiran dan kepulangan pengajar secara real-time dengan memverifikasi koordinat GPS perangkat terhadap radius titik geofence institusi.\n• Jurnal Pembelajaran Digital (KBM): Dokumentasi materi ajar, capaian kompetensi, dan pencatatan absensi peserta didik per sesi tatap muka.\n• Rekapitulasi Evaluasi Peserta Didik: Pencatatan perkembangan akademik, penilaian formatif/sumatif, portofolio siswa, dan log kedisiplinan terpadu.\n• Kontrol Hak Akses Multi-Level (RBAC): Pemisahan wewenang operasional antara peran Administrator dan Tenaga Pengajar dengan sistem autentikasi terproteksi.",
     },
     github: "https://github.com/mhmdaryaqadi/portal-guru",
     highlights: ["laravel", "php", "mysql", "tailwindcss"],
-    badge: { id: "Verified", en: "Verified" },
+    align: "left",
+    section: "project3",
+  },
+  {
+    num: "04",
+    name: {
+      en: "Portofolio 3D — Island & Vehicle Simulation",
+      id: "Portofolio 3D — Simulasi Pulau & Kendaraan",
+    },
+    badge: {
+      en: "Interactive WebGL",
+      id: "WebGL Interaktif",
+    },
+    stack: [
+      "Three.js",
+      "Rapier 3D (WASM)",
+      "WebGL",
+      "Howler.js",
+      "Vite",
+      "JavaScript",
+    ],
+    desc: {
+      en: "An interactive 3D web experience allowing visitors to navigate a physics-driven vehicle through an explorable island world featuring custom 3D typography and interactive zones.",
+      id: "Pengalaman web 3D interaktif yang memungkinkan pengunjung mengemudikan kendaraan berbasis simulasi fisika di kepulauan 3D dengan tipografi kinetik dan zona interaktif.",
+    },
+    details: {
+      en: "An interactive 3D web application developed with Three.js and Rapier 3D physics compiled to WebAssembly (WASM), delivering real-time vehicle raycasting and rigid-body mechanics in the browser.\n\nKey Subsystems & Architecture:\n• WASM Physics Engine: Real-time suspension kinematics, tire friction models, and rigid-body collision detection calculated via WebAssembly.\n• Dynamic 3D Lettering: Extruded physical text mesh ('ARYA ALQADI') at the island spawn area that responds kinematically to vehicular impact.\n• Spatial Audio Pipeline: Positional 3D audio environment powered by Howler.js, tying engine revs, surface contact, and ambient soundscapes to spatial camera coordinates.\n• Shading & Performance: Optimized GLSL shaders, Draco geometric compression, and custom level-of-detail management for consistent 60 FPS frame rates.",
+      id: "Aplikasi web 3D interaktif yang dibangun menggunakan Three.js dan mesin fisika Rapier 3D terkompilasi WebAssembly (WASM), menghadirkan simulasi kendaraan dan interaksi rigid-body secara real-time di peramban web.\n\nSubsistem Inti & Arsitektur:\n• Mesin Fisika WebAssembly: Pemodelan suspensi kendaraan, traksi ban, dan kalkulasi deteksi tabrakan fisik dengan latensi komputasi minimal.\n• Tipografi 3D Fisik Dinamis: Model teks fisik 'ARYA ALQADI' pada area pendaratan yang bereaksi secara kinetik saat bertubrukan dengan kendaraan pengguna.\n• Pipeline Audio Spasial: Penataan audio lingkungan dan efek mekanis tiga dimensi berbasis Howler.js yang diselaraskan dengan koordinat kamera.\n• Optimasi Rendering: Shader GLSL teroptimasi, kompresi geometri Draco, serta pengaturan level-of-detail untuk menjaga kestabilan 60 FPS.",
+    },
+    url: "http://localhost:3001",
+    github: "https://github.com/mhmdaryaqadi/Portofolio-3D",
+    highlights: ["threedotjs", "javascript", "git"],
     align: "right",
     section: "project4",
   },
@@ -165,102 +178,102 @@ const experiences: Array<{
 }> = [
   {
     role: {
+      en: "B.Sc. in Informatics Engineering",
       id: "S1 Teknik Informatika",
-      en: "B.Sc. Informatics Engineering",
     },
     company: "Universitas Pancasila",
     period: {
-      id: "2024 — Sekarang (Est. 2028)",
       en: "2024 — Present (Est. 2028)",
+      id: "2024 — Sekarang (Est. 2028)",
     },
     location: {
-      id: "Jakarta Selatan, Indonesia",
       en: "South Jakarta, Indonesia",
+      id: "Jakarta Selatan, Indonesia",
     },
     summary: {
-      id: "Mendalami bidang Ilmu Komputer dan Rekayasa Perangkat Lunak tingkat lanjut, dengan fokus pada Struktur Data & Algoritma, Jaringan Komputer, Pemrograman Berorientasi Objek (PBO), Basis Data Relasional, dan Arsitektur Sistem.",
-      en: "Pursuing advanced studies in Computer Science and Software Engineering, focusing on Data Structures & Algorithms, Computer Networks, Object-Oriented Programming (OOP), Relational Databases, and System Architecture.",
+      en: "Pursuing academic studies in Computer Science and Software Engineering, emphasizing Data Structures & Algorithms, Computer Networks, Object-Oriented Programming (OOP), Relational Database Systems, and Operating Systems.",
+      id: "Mendalami bidang Ilmu Komputer dan Rekayasa Perangkat Lunak, berfokus pada Struktur Data & Algoritma, Jaringan Komputer, Pemrograman Berorientasi Objek (PBO), Sistem Basis Data Relasional, dan Sistem Operasi.",
     },
     bullets: [
       {
-        id: "Riset mandiri & pengembangan aplikasi desktop Windows GameZone (137 fungsi RPC, PyWebView, Discord RPC).",
-        en: "Independent R&D and engineering of GameZone Windows desktop app (137 RPC functions, PyWebView, Discord RPC).",
+        en: "Engineered GameZone Launcher, a hybrid Windows desktop management utility leveraging Python 3.12, Edge WebView2, and ~137 custom RPC functions.",
+        id: "Mengembangkan GameZone Launcher, aplikasi desktop hybrid Windows berbasis Python 3.12, Edge WebView2, dan sekitar 137 fungsi RPC mandiri.",
       },
       {
-        id: "Eksplorasi grafika web 3D interaktif Three.js & WebGL serta kontribusi platform fullstack berbasis Laravel dan Next.js.",
-        en: "Interactive 3D WebGL / Three.js experimentation and full-stack development with Laravel and Next.js.",
+        en: "Built full-stack transactional web applications with Laravel 11/12, modern relational schemas, and interactive WebGL experiences with Three.js.",
+        id: "Membangun aplikasi web transaksional full-stack dengan Laravel 11/12, skema relasional terstruktur, serta eksplorasi WebGL interaktif Three.js.",
       },
       {
-        id: "Penerapan standar clean architecture, service layers, dan keamanan data pada setiap proyek perangkat lunak.",
-        en: "Implementation of clean architecture, service layers, and data security across software projects.",
+        en: "Applied software design patterns, service-layer separations, parameter boundary sanitization, and automated test runners.",
+        id: "Menerapkan pola desain perangkat lunak, pemisahan service layer, sanitasi batas parameter, dan otomasi pengujian sistem.",
       },
     ],
     stack: ["Python", "Laravel", "PHP", "TypeScript", "Next.js", "Three.js", "MySQL", "Git"],
   },
   {
     role: {
-      id: "Network & IT Support (Magang)",
       en: "Network & IT Support (Internship)",
+      id: "Network & IT Support (Magang)",
     },
     company: "PTIK — Universitas Pancasila",
     period: {
-      id: "Des 2022 — Mar 2023",
       en: "Dec 2022 — Mar 2023",
+      id: "Des 2022 — Mar 2023",
     },
     location: {
-      id: "Jakarta Selatan, Indonesia",
       en: "South Jakarta, Indonesia",
+      id: "Jakarta Selatan, Indonesia",
     },
     summary: {
-      id: "Bertanggung jawab atas pemeliharaan infrastruktur jaringan fisik kampus dan dukungan teknis workstation di Pusat Teknologi Informasi dan Komunikasi (PTIK) Universitas Pancasila.",
-      en: "Responsible for campus physical network infrastructure maintenance and workstation technical support at the IT Center (PTIK) of Universitas Pancasila.",
+      en: "Maintained campus-wide physical network infrastructure and provided workstation hardware and operating system technical support at the IT Center (PTIK).",
+      id: "Bertanggung jawab atas pemeliharaan infrastruktur jaringan fisik kampus dan dukungan teknis workstation di Pusat Teknologi Informasi dan Komunikasi (PTIK).",
     },
     bullets: [
       {
-        id: "Instalasi, penarikan, dan penyambungan (fusion splicing) kabel fiber optik kampus menggunakan Fusion Splicer, OPM, dan VFL.",
-        en: "Campus fiber optic cable installation, termination, and fusion splicing using Fusion Splicer, OPM, and VFL.",
+        en: "Performed campus fiber optic cable routing, termination, and fusion splicing using industrial fusion splicers, OPM, and VFL testers.",
+        id: "Melakukan penarikan, terminasi, dan penyambungan kabel fiber optik (fusion splicing) menggunakan fusion splicer, OPM, dan VFL.",
       },
       {
-        id: "Pemasangan kabel UTP Cat5e/Cat6, penataan kerapihan rak server lab (cable management), dan maintenance switch distribusi.",
-        en: "Cat5e/Cat6 UTP cabling, server rack cable management, and distribution switch hardware maintenance.",
+        en: "Managed Cat5e/Cat6 UTP cabling, structured server rack cable organization, and distribution switch hardware maintenance.",
+        id: "Pemasangan kabel UTP Cat5e/Cat6, penataan kerapihan rak server lab (cable management), dan perawatan berkala switch distribusi.",
       },
       {
-        id: "Troubleshooting hardware komputer workstation, konfigurasi driver sistem operasi Windows, dan manajemen konektivitas LAN.",
-        en: "Workstation hardware troubleshooting, Windows OS driver configuration, and LAN connectivity maintenance.",
+        en: "Conducted desktop workstation diagnostics, Windows driver installations, component replacements, and LAN configuration.",
+        id: "Melakukan diagnostik workstation desktop, instalasi driver Windows, pergantian komponen hardware, dan konfigurasi koneksi LAN.",
       },
     ],
-    stack: ["Fiber Optic", "Fusion Splicer", "LAN Cat6", "Server Rack", "Hardware Maintenance", "Windows"],
+    stack: ["Fiber Optic", "Fusion Splicing", "LAN Cat6", "Server Rack", "Hardware Maintenance", "Windows"],
   },
   {
     role: {
-      id: "Teknik Komputer dan Jaringan (TKJ)",
       en: "Computer Network Engineering (Vocational)",
+      id: "Teknik Komputer dan Jaringan (TKJ)",
     },
     company: "SMK Teknindo Jaya",
     period: {
-      id: "2021 — 2024",
       en: "2021 — 2024",
+      id: "2021 — 2024",
     },
     location: {
-      id: "Depok, Jawa Barat, Indonesia",
       en: "Depok, West Java, Indonesia",
+      id: "Depok, Jawa Barat, Indonesia",
     },
     summary: {
-      id: "Pendidikan vokasi kejuruan dengan penekanan kuat pada perakitan sistem komputer, topologi jaringan LAN/WAN, routing, dan administrasi server.",
-      en: "Vocational engineering education emphasizing computer hardware assembly, LAN/WAN topologies, routing, and server administration.",
+      en: "Three-year vocational secondary education specializing in computer hardware architecture, network protocols, server administration, and routing.",
+      id: "Pendidikan kejuruan tiga tahun dengan konsentrasi pada arsitektur perangkat keras komputer, protokol jaringan, administrasi server, dan routing.",
     },
     bullets: [
       {
-        id: "Konfigurasi MikroTik RouterOS: Static & Dynamic Routing, DHCP Server, Firewall NAT, Bandwidth Limiter (Queues), dan Hotspot.",
-        en: "MikroTik RouterOS configuration: Routing, DHCP Server, NAT Firewall, Bandwidth Limiter (Queues), and Hotspots.",
+        en: "Configured MikroTik RouterOS: static and dynamic routing, DHCP servers, NAT firewalls, bandwidth queue limits, and user hotspot gateways.",
+        id: "Konfigurasi MikroTik RouterOS: routing statis & dinamis, DHCP server, firewall NAT, manajemen bandwidth (queues), dan gateway hotspot.",
       },
       {
-        id: "Desain dan simulasi topologi jaringan komputer enterprise menggunakan Cisco Packet Tracer.",
-        en: "Enterprise network topology design and simulation using Cisco Packet Tracer.",
+        en: "Simulated and analyzed enterprise network topologies, VLANs, and subnetting structures using Cisco Packet Tracer.",
+        id: "Simulasi dan analisis topologi jaringan enterprise, VLAN, dan skema subnetting menggunakan Cisco Packet Tracer.",
       },
       {
-        id: "Perakitan hardware PC desktop, instalasi sistem operasi, dan troubleshooting bios/motherboard.",
-        en: "Desktop PC hardware assembly, operating system setup, and motherboard/BIOS diagnostics.",
+        en: "Assembled desktop PC hardware, diagnosed BIOS/UEFI settings, and performed clean operating system deployments.",
+        id: "Perakitan hardware PC desktop, diagnostik pengaturan BIOS/UEFI, serta instalasi sistem operasi bersih.",
       },
     ],
     stack: ["MikroTik RouterOS", "Winbox", "Cisco Packet Tracer", "LAN / WAN", "Hardware Assembly"],
@@ -268,7 +281,7 @@ const experiences: Array<{
 ];
 
 function pick<T>(loc: { id: T; en: T }, lang: Lang): T {
-  return loc[lang] ?? loc.id;
+  return loc[lang] ?? loc.en;
 }
 
 // Hero name split per word so each can rise independently.
