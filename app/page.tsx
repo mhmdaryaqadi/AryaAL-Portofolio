@@ -61,12 +61,6 @@ const projects: Project[] = [
       id: "GameZone Launcher merupakan perangkat lunak desktop Windows terintegrasi yang mengadopsi Microsoft Edge WebView2 melalui kerangka kerja PyWebView untuk menghadirkan antarmuka komposit berbasis akselerasi GPU tanpa pembekuan thread komputasi utama.\n\nSubsistem Inti & Arsitektur:\n• Jembatan Komunikasi IPC Asinkron: Mengimplementasikan sekitar 137 metode RPC pada kelas API utama dengan validasi batasan parameter dan struktur serialisasi data standar.\n• Pipeline Injeksi Steam & Mirror Failover: Mengotomasi verifikasi dan penempatan berkas ke direktori Steam stplug-in dengan penutupan aman proses steam.exe (-shutdown) serta failover multi-server terdistribusi.\n• Mesin Diagnostik NetFix: Menginvalidasi berkas lisensi appinfo.vdf untuk memulihkan anomali klien Steam tanpa merusak konfigurasi pengguna.\n• Manajemen Simpanan Data Lokal: Sistem pencadangan terstruktur untuk save game lokal, basis data SQLite 3 mode WAL, serta verifikasi keanggotaan komunitas via Discord OAuth2.",
     },
     github: "https://github.com/mhmdaryaqadi/GameZone-Releases",
-    media: [
-      "/projects/gamezone/out-v2-scene1.png",
-      "/projects/gamezone/out-v2-scene2.png",
-      "/projects/gamezone/out-v2-scene4.png",
-      "/projects/gamezone/out-v2-scene5.png",
-    ],
     highlights: ["python", "git", "linux"],
     align: "left",
     section: "project1",

@@ -18,8 +18,7 @@ export default function Carousel({ media, projectNum, altPrefix = "Screenshot" }
   const slides =
     media && media.length > 0
       ? media
-      : // 3 placeholder slides so the carousel controls make sense.
-        [null, null, null];
+      : [null];
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
 
